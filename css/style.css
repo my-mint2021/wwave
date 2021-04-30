@@ -58,7 +58,7 @@ body {
   text-transform: uppercase;
   border: 1px solid #c4c4c4;
   color: #242121;
-  cursor:pointer;
+  cursor: pointer;
   transition: color 0.2s ease-in, border-color 0.2s ease-in;
 }
 
@@ -176,7 +176,7 @@ body {
 
 /* === school === */
 .school {
-  padding: 160px 0 180px;
+  padding: 160px 0 175px;
   background-color: #f8f8f8;
 }
 
@@ -196,9 +196,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto 15px;
   padding-left: 75px;
-  padding-bottom: 10px;
   max-width: 220px;
   min-height: 55px;
   font-weight: 400;
@@ -475,3 +474,78 @@ body {
 }
 
 /* === / gallery === */
+
+/* === blog === */
+.blog {}
+
+.blog__title {
+  margin-bottom: 225px;
+}
+
+.slider {}
+
+.slider__item {
+  position: relative;
+  height: 800px;
+}
+
+.slider__content {
+  position: relative;
+  z-index: 2;
+  width: 600px;
+  height: 800px;
+  padding-top: 320px;
+  left: 50%;
+
+}
+
+.slider__title {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.slider__subtitle {
+  font-weight: 300;
+  font-size: 14px;
+  color: #fff;
+}
+
+.slider__wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.slick-dots{
+  position: absolute;
+  display: flex;
+  left: 43%;
+  transform: translateX(-3%);
+  bottom: 77px;
+}
+
+.slick-dots li:not(:last-child){
+  margin-right: 15px;
+}
+.slick-dots button{
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  font-size: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+}
+
+.slick-active button{
+  background-color: #00B2A0;
+}
+
+/* === / blog === */
