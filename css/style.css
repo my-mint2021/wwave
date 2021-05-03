@@ -1,3 +1,16 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 body {
   font-family: 'Roboto Condensed', 'Tahoma', sans-serif;
   font-weight: 300;
@@ -47,7 +60,7 @@ body {
   content: "/";
   position: absolute;
   top: 0;
-  font-size: 72px;
+  font-size: 1.5em;
   color: #00B2A0;
 }
 
@@ -66,28 +79,18 @@ body {
 .button:hover {
   color: #00B2A0;
   border-color: #00B2A0;
+
+}
+
+.button:focus {
+  outline: 1px solid #00b2a0;
 }
 
 .button:active {
   background-color: #c7c7c7;
   color: #fff;
   border-color: #fff;
-}
-
-.hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #333;
-  opacity: 0;
-  cursor: pointer;
-  transition: opacity 0.3s ease-in;
-}
-
-.hover:hover {
-  opacity: 0.7;
+  box-shadow: 2px 2px 10px hsla(174, 100%, 35%, 0.322);
 }
 
 .header__top {
@@ -99,19 +102,32 @@ body {
 }
 
 .logo {
-  transition: transform 0.2s ease-in;
+  outline-color: transparent;
+  transition: transform 0.2s ease-in, outline 0.2s ease-in;
 }
 
 .logo:hover {
   transform: scale(1.1);
 }
 
+.logo:focus {
+  outline: 1px solid #03d1d8;
+}
+
+.logo path {
+  transition: fill 0.3s ease-in;
+}
+
 .logo:hover path {
-  fill: #000;
+  fill: #03d1d8;
 }
 
 .header__logo {
   margin-right: 185px;
+}
+
+.menu__burger {
+  display: none;
 }
 
 .menu {
@@ -130,12 +146,18 @@ body {
   text-decoration: none;
   color: #ffffff;
   border-bottom: 1px solid transparent;
-  transition: border-bottom 0.2s ease-in;
+  outline-color: transparent;
+  transition: border-bottom 0.2s ease-in, outline 0.2s ease-in;
 }
 
 .menu__link:hover {
   border-bottom-color: #00b2a0;
 }
+
+.menu__link:focus {
+  outline: 1px solid #03d1d8;
+}
+
 
 .header__content {
   display: flex;
@@ -168,15 +190,24 @@ body {
   width: 20px;
   height: 80px;
   background-repeat: no-repeat;
-  transition: transform 0.2s ease-in, fill 0.2s ease-in;
+  outline-color: transparent;
+  transition: transform 0.2s ease-in, outline 0.2s ease-in;
 }
 
 .header__icon:hover {
   transform: translateY(-5px);
 }
 
-.header__icon path:hover {
+.header__icon path {
+  transition: fill 0.3s ease-in;
+}
+
+.header__icon:hover path {
   fill: #03d1d8e5;
+}
+
+.header__icon:focus {
+  outline: 1px solid #03d1d8;
 }
 
 /* === / header === */
@@ -386,7 +417,7 @@ body {
 }
 
 .gallery__btn:focus {
-  outline-color: #00B2A0;
+  outline: 1px solid #00b2a0;
   border-bottom-color: transparent;
 }
 
@@ -405,15 +436,40 @@ body {
   position: relative;
 }
 
+.gallery__link {
+  outline: 5px solid transparent;
+}
+
+/* не понял как сделать фокус на галерее */
+.gallery__link:focus {
+  outline: 5px solid #00b2a0;
+}
+
+.gallery__hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in;
+}
+
+.gallery__hover:hover {
+  opacity: 0.7;
+}
+
 .gallery__button {
   position: relative;
-  left: 50%;
   margin-bottom: 200px;
+  left: 50%;
   transform: translate(-50%, 0);
 }
 
 .blockquote {
-  margin-bottom: 200px;
+  margin-bottom: 185px;
   padding: 80px 0;
   text-align: center;
   font-style: italic;
@@ -423,19 +479,14 @@ body {
   background-color: #f8f8f8;
 }
 
-.blockquote__wrap {
-  position: relative;
-}
-
 .blockquote__author {
-  position: absolute;
-  display: block;
-  right: -158px;
-  top: 40px;
+  max-width: 885px;
+  margin: 0 auto;
+  text-align: right;
   font-size: 14px;
 }
 
-.video {
+.video__wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -443,16 +494,18 @@ body {
   height: 600px;
   background-repeat: no-repeat;
   background-position: center center;
+
 }
 
 .video__link svg path {
   transition: fill 0.2s ease-in, transform 0.3s ease-in;
 }
 
-.video__link svg path:hover {
+.video__link:hover .video__wrap svg path {
   transform: translateY(-4px);
   fill: #fff;
 }
+
 
 .numbers {
   display: flex;
@@ -483,42 +536,44 @@ body {
 
 /* === blog === */
 .blog {
-  padding-bottom: 200px;
+  padding-bottom: 195px;
 }
 
 .blog__title {
-  margin-bottom: 225px;
+  margin-bottom: 229px;
 }
 
-.slider__item {
+.blog__slider-item {
   position: relative;
   height: 800px;
 }
 
-.slider__content {
+.blog__slider-content {
   position: relative;
   z-index: 2;
-  left: 50%;
-  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  margin-left: auto;
   height: 800px;
-  padding-top: 320px;
+  padding-bottom: 35px;
+  color: #fff;
 }
 
-.slider__title {
+.blog__slider-top {
   font-weight: 400;
   font-size: 48px;
   line-height: 1.2;
   text-transform: uppercase;
-  color: #fff;
 }
 
-.slider__subtitle {
+.blog__slider-text {
   font-weight: 300;
   font-size: 14px;
-  color: #fff;
 }
 
-.slider__wrap {
+.blog__slider-blackout {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -531,7 +586,11 @@ body {
 
 .slick-dots {
   position: absolute;
-  left: 43%;
+  width: 100%;
+  /* для пп. уверен что так не стоит делать ))) не знаю другого способа */
+  padding-left: 120px;
+  justify-content: center;
+  /* для пп */
   bottom: 77px;
   display: flex;
   transform: translateX(-3%);
@@ -549,12 +608,18 @@ body {
   border: none;
   border-radius: 50%;
   background-color: #f8f8f8;
+  outline: transparent;
   cursor: pointer;
 }
 
 .slick-dots button:hover {
   border: 2px solid #00B2A0;
 }
+
+.slick-dots button:focus {
+  outline: 1px solid #00B2A0;
+}
+
 
 .slick-active button {
   background-color: #00B2A0;
@@ -575,36 +640,60 @@ body {
 
 .team__list {
   display: flex;
+  justify-content: space-around;
 }
 
 .team__member {
-  position: relative;
   width: 330px;
   height: 450px;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 .team__member:not(:last-child) {
   margin-right: 105px;
 }
 
-.team__member p {
+.team__photo {
+  position: relative;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.team__photo:hover::after {
+  content: attr(data-title);
   position: absolute;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
+  padding: 2px 10px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  line-height: 1;
+  border-radius: 20px;
+  background-color: hsla(174, 100%, 35%, 0.205);
+}
+
+.team__photo img {
+  transition: transform 0.3s ease-in
+}
+
+.team__photo img:hover {
+  transform: scale(1.02);
 }
 
 .team__name {
-  bottom: -50px;
   margin-bottom: 5px;
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
-
 }
 
 .team__position {
-  bottom: -66px;
   font-weight: 400;
 }
 
@@ -612,7 +701,7 @@ body {
 
 /* === tariffs === */
 .tariffs {
-  padding: 200px 0;
+  padding: 200px 0 225px;
   background-color: #f8f8f8;
 }
 
@@ -630,10 +719,19 @@ body {
 }
 
 .tariffs__item {
-  position: relative;
-  padding: 45px 30px 146px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 45px 30px;
   max-width: 360px;
   background-color: #fff;
+
+}
+
+.tariffs__item-list {
+  padding-bottom: 60px;
+  /* написал чтобы список прижимался к h3 сверху */
+  flex: auto;
 }
 
 .tariffs__item-text {
@@ -644,7 +742,7 @@ body {
   margin-bottom: 20px;
 }
 
-.tariffs__item .tariffs__item-rate {
+.tariffs__item-rate {
   margin-bottom: 60px;
   font-size: 36px;
   font-weight: 400;
@@ -653,19 +751,15 @@ body {
   color: #01353E;
 }
 
-.tariffs__item .tariffs__item-num {
-  position: absolute;
-  left: 50%;
-  bottom: 65px;
+.tariffs__item-num {
   font-weight: 400;
   font-size: 36px;
   line-height: 1.1;
   text-align: center;
   color: #01353E;
-  transform: translateX(-50%);
 }
 
-.tariffs__item .tariffs__item-num span {
+.tariffs__item-num span {
   vertical-align: middle;
   font-size: 18px;
   line-height: 1;
@@ -674,33 +768,16 @@ body {
 /* === / tariffs === */
 
 /* === map === */
-.map {
-  padding: 200px 0;
+.contacts__map {
+  padding: 195px 0 200px;
 }
 
-.map__img {
-  position: relative;
+.contacts__map-img {
   max-width: 1473px;
-  height: 640px;
   margin: 0 auto;
+  height: 640px;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.map__img span {
-  position: absolute;
-  left: 50%;
-  top: 98px;
-  transform: translateX(-50%);
-  cursor: pointer;
-}
-
-.map__img span path {
-  transition: fill 0.2s ease-in;
-}
-
-.map__img span path:hover {
-  fill: #fff;
 }
 
 /* === / map === */
@@ -720,65 +797,75 @@ body {
   margin-right: 30px;
   width: 570px;
   flex-direction: column;
+  padding-top: 7px;
 }
 
-.form input::placeholder,
-.form textarea::placeholder,
-.form input,
-.form textarea {
+.form__input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 15px 0 20px 10px;
+  border: none;
+  outline-color: transparent;
+  border-bottom: 2px solid #dadada;
+  transition: border-bottom 0.3s ease-in, outline-color 0.3s ease-in;
+}
+
+.form__input::placeholder {
   font-size: 18px;
   line-height: 1;
   color: #00B2A0;
 }
 
-.form textarea::placeholder {
-  max-width: 260px;
-}
-
-.form input,
-.form textarea {
-  border: none;
-  border-bottom: 2px solid #dadada;
-}
-
-.form input {
-  padding: 15px 0;
-  padding-left: 10px;
-  margin-bottom: 15px;
-}
-
-.form textarea {
-  height: 195px;
-  margin-bottom: 73px;
-  padding-top: 40px;
-  padding-left: 10px;
-}
-
-.form input:hover,
-.form textarea:hover {
+.form__input:hover {
   border-bottom: 2px solid #00B2A0;
 }
 
-.form input:focus,
-.form textarea:focus {
+.form__input:focus {
   outline-color: #00B2A0;
+  border-bottom-color: transparent;
 }
 
-.contacts__button {
+.form__textarea {
+  height: 195px;
+  margin-bottom: 60px;
+  padding-top: 40px;
+  padding-left: 10px;
+  resize: none;
+}
+
+.form__textarea::placeholder {
+  max-width: 260px;
+}
+
+.form__button {
   align-self: flex-start;
-  padding: 23px 115px;
+  padding: 0;
+  padding: 23px 95px;
+  /* оставил паддинги, без них не работает оО */
 }
 
 .contacts__addr {
   flex-basis: 50%;
-  padding: 63px 200px 50px 50px;
-  background-color: #f8f8f8;
+  padding: 65px 200px 50px 50px;
   font-weight: 400;
   font-size: 24px;
+  background-color: #f8f8f8;
 }
 
 .contacts__item:not(:last-child) {
   margin-bottom: 65px;
+}
+
+.contacts__item a:hover {
+  text-decoration: underline;
+}
+
+.contacts__item a:focus {
+  outline: 1px solid #00B2A0;
+}
+
+.contacts__item a:active {
+  color: #00B2A0;
 }
 
 .social {
@@ -798,6 +885,10 @@ body {
   color: #00b2a0;
 }
 
+.social__link:focus {
+  outline: 1px solid #00B2A0;
+}
+
 .social__item:not(:last-child) {
   margin-right: 10px;
 }
@@ -813,3 +904,190 @@ body {
 }
 
 /* === / footer === */
+@media (max-width: 1220px) {
+
+  .about {
+    padding: 100px 0;
+  }
+  
+  .about__text{
+    justify-content: space-around;
+  }
+  .about__text p {
+    margin-right: 20px;
+  }
+
+  .school {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .header__top {
+    justify-content: space-around;
+  }
+
+  .header__logo {
+    margin-right: 50px;
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  .title{
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+  .header__title {
+    font-size: 150px;
+  }
+ .about{
+   padding: 50px 0;
+ }
+  .about__text {
+    display: block
+  }
+  .about__text p {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .school{
+    padding: 50px 0;
+  }
+
+  .school__items{
+    display: block;
+    
+  }
+
+  .school__item{
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .school__service{
+    margin: 15px 0;
+  }
+  .school__descr{
+    max-width: 90%;
+    margin-bottom: 50px;
+  }
+
+  .school__inner{
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .school__text{
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__top {
+    justify-content: start;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 3;
+  }
+
+  .menu__burger {
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .menu {
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 0;
+    display: block;
+    padding: 150px 0 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.856);
+    transform: translateY(-200%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .menu__link {
+    display: block;
+    padding: 30px 0;
+  }
+
+  .menu--active {
+    transform: translateY(0%);
+  }
+
+  .title{
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+
+  .about {
+    padding: 50px 0;
+  }
+  .school {
+    padding: 0;
+  }
+  .school__service{
+    font-size: 18px;
+  }
+  .school__num{
+    font-size: 18px;
+  }
+
+
+}
+
+@media(max-width: 500px) {
+  
+  .title{
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .header__title {
+    font-size: 80px;
+  }
+
+  .header__subtitle {
+    font-size: 14px;
+  }
+
+  .about {
+    padding: 25px 0;
+  }
+}
+
+@media(max-width: 375px) {
+
+  .menu{
+    padding: 100px 0 50px;
+  }
+
+  .menu__link {
+    font-size: 18px;
+    padding: 15px 0;
+  }
+
+  .school__info {
+    width: 240px;
+}
+.school__descr {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+}
