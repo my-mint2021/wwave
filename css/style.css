@@ -907,15 +907,280 @@ body {
 
 /* === media === */
 
-@media(max-width: 1600px){
+/* ============================== */
+/* по чек-листу не более 4 запросов, но тут фон совсемплохо смотрится безуменьшения паддингов */
+@media(max-width: 1600px) {
   .motivation__bg {
     padding: 50px 0;
+  }
+}
+
+@media(max-width: 1200px) {
+
+  .header__top {
+    justify-content: space-around;
+  }
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .about {
+    padding: 50px 0;
+  }
+
+  .about__text {
+    justify-content: space-around;
+  }
+
+  .about__text p {
+    max-width: 95%;
+    margin-right: 20px;
+  }
+
+  .school {
+    padding: 50px 0;
+  }
+
+  .school__inner {
+    justify-content: space-around;
+  }
+
+  .school__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .school__info {
+    margin-right: 40px;
+  }
+
+  .motivation__bg {
+    /* перебивались стили из инлайна в html, пришлось)) */
+    background-image: none !important;
+  }
+
+  .motivation__title {
+    text-align: center;
+  }
+
+  .motivation__text {
+    max-width: 100%;
   }
 
 }
 
+@media(max-width: 992px) {
 
 
+  .header__logo {
+    margin-right: 50px;
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .header__title {
+    font-size: 150px;
+  }
+
+  .about {
+    padding: 50px 0;
+  }
+
+  .about__text {
+    display: block
+  }
+
+  .about__text p {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 95%;
+  }
+
+  .school {
+    padding: 50px 0;
+  }
+
+  .school__items {
+    display: block;
+
+  }
+
+  .school__item {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .school__service {
+    margin: 15px 0;
+  }
+
+  .school__descr {
+    max-width: 90%;
+    margin-bottom: 50px;
+  }
+
+  .school__inner {
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .school__text {
+    max-width: 90%;
+  }
+
+  .motivation__text {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+
+
+@media(max-width: 768px) {
+  .header__top {
+    justify-content: start;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 3;
+  }
+
+  .menu__burger {
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .menu {
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 0;
+    /* bottom: 0;
+  хотел растянуть меню на весь экран устройства,чтобыможнобыло кликать 
+  только на пункты из меню, ичтобыкорректноотображалосьна всех
+   устройствах при bottom:0 ничего не растягивает как когда делал 
+   ховер на галерее. плюс не закрывается меню по клику на любом
+    пункте мени-как реализовать??? */
+    display: block;
+    padding: 150px 0 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.856);
+    transform: translateY(-200%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .menu__link {
+    display: block;
+    padding: 30px 0;
+  }
+
+  .menu--active {
+    transform: translateY(0%);
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+
+  .about {
+    padding: 50px 0 0;
+  }
+
+  .school {
+    padding: 50px 0 0;
+  }
+
+  .school__service {
+    font-size: 18px;
+  }
+
+  .school__num {
+    font-size: 18px;
+  }
+
+  .motivation__bg {
+    padding: 50px 0 0;
+  }
+}
+
+@media(max-width: 576px) {
+
+  .menu {
+    padding: 100px 0 50px;
+  }
+
+  .menu__link {
+    font-size: 18px;
+    padding: 15px 0;
+  }
+
+  .title {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .about__title {
+    font-size: 14px;
+  }
+
+  .header__title {
+    font-size: 80px;
+  }
+
+  .header__subtitle {
+    font-size: 14px;
+  }
+
+  .about {
+    padding: 25px 0;
+  }
+
+  .school__inner {
+    max-width: 96%;
+  }
+
+  .school__info {
+    width: 240px;
+  }
+
+  .school__descr {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .motivation__bg {
+    padding: 0;
+  }
+}
+
+
+
+/* медиа по респонсив */
+
+/* 
+@media(max-width: 1600px) {
+  .motivation__bg {
+    padding: 50px 0;
+  }
+}
 
 
 @media (max-width: 1220px) {
@@ -936,14 +1201,16 @@ body {
     padding: 100px 0;
   }
 
-.motivation__bg{
-  /* перебивались стили из инлайна в html, пришлось)) */
-    background-image: none !important;
+  .motivation__bg { */
+/* перебивались стили из инлайна в html, пришлось)) */
+/* background-image: none !important;
   }
-  .motivation__title{
+
+  .motivation__title {
     text-align: center;
   }
-  .motivation__text{
+
+  .motivation__text {
     max-width: 100%;
   }
 }
@@ -1047,8 +1314,14 @@ body {
     position: absolute;
     left: -10px;
     right: -10px;
-    top: 0;
-    display: block;
+    top: 0; */
+/* bottom: 0;
+  хотел растянуть меню на весь экран устройства,чтобыможнобыло кликать 
+  только на пункты из меню, ичтобыкорректноотображалосьна всех
+   устройствах при bottom:0 ничего не растягивает как когда делал 
+   ховер на галерее. плюс не закрывается меню по клику на любом
+    пункте мени-как реализовать??? */
+/* display: block;
     padding: 150px 0 50px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.856);
@@ -1075,11 +1348,12 @@ body {
   }
 
   .about {
-    padding: 50px 0;
+    padding: 50px 0 0;
+    ;
   }
 
   .school {
-    padding: 50px 0;
+    padding: 50px 0 0;
   }
 
   .school__service {
@@ -1088,6 +1362,10 @@ body {
 
   .school__num {
     font-size: 18px;
+  }
+
+  .motivation__bg {
+    padding: 50px 0 0;
   }
 }
 
@@ -1121,7 +1399,7 @@ body {
     max-width: 96%;
   }
 
-  .motivation__bg{
+  .motivation__bg {
     padding: 0;
   }
 }
@@ -1148,4 +1426,4 @@ body {
     max-width: 100%;
     margin-bottom: 30px;
   }
-}
+} */
