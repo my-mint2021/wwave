@@ -906,6 +906,18 @@ body {
 /* === / footer === */
 
 /* === media === */
+
+@media(max-width: 1600px){
+  .motivation__bg {
+    padding: 50px 0;
+  }
+
+}
+
+
+
+
+
 @media (max-width: 1220px) {
 
   .about {
@@ -922,6 +934,17 @@ body {
 
   .school {
     padding: 100px 0;
+  }
+
+.motivation__bg{
+  /* перебивались стили из инлайна в html, пришлось)) */
+    background-image: none !important;
+  }
+  .motivation__title{
+    text-align: center;
+  }
+  .motivation__text{
+    max-width: 100%;
   }
 }
 
@@ -1096,6 +1119,10 @@ body {
 
   .school__inner {
     max-width: 96%;
+  }
+
+  .motivation__bg{
+    padding: 0;
   }
 }
 
