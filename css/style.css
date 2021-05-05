@@ -340,7 +340,7 @@ body {
   padding-top: 30px;
 }
 
-.school__text p {
+.school__text p:not(:last-child) {
   padding-bottom: 30px;
 }
 
@@ -896,7 +896,10 @@ body {
 
   .about,
   .school,
-  .motivation {
+  .motivation,
+  .gallery,
+  .tariffs,
+  .contacts__map {
     padding: 50px 0;
     line-height: 1.5;
   }
@@ -908,6 +911,7 @@ body {
   .about__text,
   .school__descr,
   .school__text,
+  .school__results,
   .motivation__text {
     font-size: 16px;
     text-align: justify;
@@ -942,6 +946,55 @@ body {
     max-width: 95%;
     margin: 0 auto;
   }
+
+  .gallery__title {
+    padding: 0;
+  }
+
+  .gallery__button {
+    margin-bottom: 0;
+  }
+
+  .blockquote {
+    margin-bottom: 0;
+  }
+
+  .video__wrap {
+    margin-bottom: 50px;
+  }
+
+  .blog {
+    padding-bottom: 50px;
+  }
+
+  .blog__slider-content {
+    max-width: 500px;
+  }
+
+  .blog__slider-top {
+    font-size: 40px;
+  }
+
+  .team {
+    padding-bottom: 100px;
+  }
+
+  .contacts__img {
+    height: 550px;
+  }
+
+  .contacts__inner {
+    padding-bottom: 100px;
+  }
+
+  .social {
+    margin-bottom: 100px;
+  }
+
+  .footer {
+    padding: 25px 0;
+  }
+
 }
 
 @media(max-width: 992px) {
@@ -954,13 +1007,32 @@ body {
     margin-right: 20px;
   }
 
+  .menu__link {
+    font-size: 16px;
+  }
+
   .title {
     font-size: 36px;
     margin-bottom: 50px;
   }
 
+
   .header__title {
-    font-size: 150px;
+    font-size: 100px;
+    text-align: center;
+  }
+
+  .header__subtitle {
+    font-size: 16px;
+  }
+
+  .header__icon {
+    margin-bottom: 0px;
+  }
+
+  .header__icon svg {
+    width: 13px;
+    height: 50px;
   }
 
   .about,
@@ -1004,11 +1076,114 @@ body {
   }
 
   .school__descr {
-    max-width: 70%;
+    max-width: 80%;
     margin: 0 auto 50px;
   }
+
+  .gallery__filter {
+    margin-bottom: 20px;
+  }
+
+  .gallery__item {
+    margin: 0 10px 20px;
+  }
+
+  .blockquote__author {
+    max-width: 700px;
+  }
+
+  .numbers__num {
+    font-size: 45px;
+  }
+
+  .blog__slider-content {
+    max-width: 400px;
+  }
+
+  .blog__slider-item,
+  .blog__slider-content {
+    height: 600px;
+  }
+
+  .blog__slider-item {
+    background-position: center;
+  }
+
+  .blog__slider-top {
+    font-size: 33px;
+    margin-bottom: 20px;
+  }
+
+  .blog__slider-text {
+    font-weight: 300;
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  .slick-dots {
+    bottom: 40px;
+  }
+
+  .slick-dots li:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .slick-dots button {
+    width: 10px;
+    height: 10px;
+  }
+
+  .team__list {
+    display: block;
+    width: 330px;
+    margin: 0 auto;
+  }
+
+  .team__member:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 100px;
+  }
+
+  .tariffs__items {
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  .tariffs__item {
+    padding: 10px;
+  }
+
+  .tariffs__item-rate {
+    margin-bottom: 45px;
+    font-size: 30px;
+  }
+
+  .tariffs__item-list {
+    padding-bottom: 30px;
+  }
+
+  .form {
+
+    width: 450px;
+  }
+
+  .contacts__img {
+    height: 450px;
+  }
+
+  .contacts__addr {
+    padding: 20px;
+  }
+
+  .contacts__inner {
+    padding-bottom: 50px;
+  }
+
+  .social {
+    margin-bottom: 50px;
+  }
 }
-/* закончил на 768 */
+
 @media(max-width: 768px) {
   .header__top {
     justify-content: start;
@@ -1063,7 +1238,8 @@ body {
 
   .about,
   .school,
-  .motivation__bg {
+  .motivation,
+  .gallery {
     padding: 50px 0 0;
   }
 
@@ -1074,28 +1250,173 @@ body {
 
   .school__num {
     font-size: 18px;
+    right: -35px;
   }
 
+  .gallery__button {
+    margin-bottom: 30px;
+  }
+
+  .contacts {
+    padding-top: 30px;
+  }
+
+  .video__wrap {
+    margin-bottom: 30px;
+    height: 350px;
+  }
+
+  .video__wrap svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .numbers__num {
+    font-size: 35px;
+  }
+
+  .numbers__num:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  .blockquote {
+    padding: 30px 0;
+  }
+
+  .blockquote__text {
+    font-size: 26px;
+  }
+
+  .blockquote__author {
+    font-size: 13px;
+    max-width: 700px;
+  }
+
+  .numbers {
+    margin-bottom: 50px;
+  }
+
+  .numbers__num {
+    width: 50%;
+  }
+
+  .blog__slider-item,
+  .blog__slider-content {
+    height: 400px;
+  }
+
+  .blog__slider-content {
+    padding-bottom: 0;
+  }
+
+  .blog__slider-top {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  .slick-dots {
+    bottom: 30px;
+  }
+
+  .tariffs {
+    margin-bottom: 0;
+  }
+
+  .tariffs__items {
+    display: block;
+  }
+
+  .tariffs__item {
+    width: 90%;
+    margin: 0 auto 50px;
+  }
+
+  .tariffs__item-num {
+    font-size: 25px;
+  }
+
+  .contacts__map {
+    display: none;
+  }
+
+  .contacts__inner {
+    display: block;
+  }
+
+  .form {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .form__button {
+    align-self: center;
+    padding: 18px 70px;
+  }
+
+  .contacts__addr {
+    padding: 50px;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .contacts__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .contacts__inner {
+    padding-bottom: 0px;
+  }
+
+  .footer {
+    padding: 10px 0;
+  }
 }
 
 @media(max-width: 576px) {
 
   .menu {
-    padding: 100px 0 50px;
+    padding: 60px 0;
   }
 
   .menu__link {
-    font-size: 18px;
-    padding: 15px 0;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .header__top {
+    padding: 20px 20px 0;
+  }
+
+  .logo svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu__burger {
+    right: 20px;
   }
 
   .title {
-    font-size: 15px;
+    font-size: 25px;
     margin-bottom: 30px;
   }
 
-  .about__title {
-    font-size: 14px;
+  .title::after {
+    font-size: 0;
+  }
+
+  .header__title {
+    font-size: 60px;
+    text-align: center;
+  }
+
+  .header__icon {
+    margin-bottom: -40px;
+  }
+
+  .header__icon svg {
+    width: 20px !important;
+    height: 40px !important;
   }
 
   .header__title {
@@ -1106,12 +1427,18 @@ body {
     font-size: 14px;
   }
 
-  .about {
-    padding: 25px 0;
+  .about,
+  .school,
+  .motivation {
+    padding: 25px 0 0;
   }
 
   .school__inner {
     max-width: 96%;
+  }
+
+  .school__service {
+    font-size: 18px;
   }
 
   .school__info {
@@ -1119,11 +1446,126 @@ body {
   }
 
   .school__descr {
-    max-width: 100%;
     margin-bottom: 30px;
   }
 
   .motivation__bg {
     padding: 0;
+  }
+
+  .motivation__text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .button {
+    padding: 14px 35px;
+    font-size: 16px;
+  }
+
+  .gallery__btn {
+    font-size: 16px;
+  }
+
+  .gallery__content {
+
+    margin: 0 auto;
+  }
+
+  .gallery__link img {
+    max-width: 100%;
+  }
+
+  .blockquote {
+    padding: 30px 0;
+  }
+
+  .blockquote__text {
+    font-size: 18px;
+  }
+
+  .blockquote__author {
+    font-size: 11px;
+    max-width: 300px;
+  }
+
+  .video__wrap {
+    margin-bottom: 30px;
+  }
+
+  .video__wrap svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .numbers {
+    margin-bottom: 25px;
+  }
+
+  .numbers__num {
+    font-size: 26px;
+  }
+
+  .blog__slider-top {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .blog__slider-content {
+    max-width: 200px;
+  }
+
+  .blog__slider-item,
+  .blog__slider-content,
+  .video__wrap {
+    height: 250px;
+  }
+
+
+  .slick-dots {
+    bottom: 10px;
+  }
+
+  .slick-dots li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .slick-dots button {
+    width: 8px;
+    height: 8px;
+  }
+
+  .team {
+    padding-bottom: 30px;
+  }
+
+  .team__member {
+    padding: 10px 0px;
+  }
+
+  .team__member:not(:last-child) {
+    margin-bottom: 100px;
+  }
+
+  .tariffs__item-rate,
+  .tariffs__item-num {
+    font-size: 23px;
+  }
+
+  .tariffs {
+    padding: 80px 0 50px;
+    margin-bottom: 30px;
+  }
+
+  .tariffs__item-text:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .contacts__addr {
+    margin: 30px auto;
+
+  }
+
+  .social__item {
+    font-size: 20px;
   }
 }
