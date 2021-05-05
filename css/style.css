@@ -1080,6 +1080,12 @@ body {
     margin: 0 auto 50px;
   }
 
+  .gallery__content,
+  .gallery__filter {
+    display: flex;
+    justify-content: center;
+  }
+
   .gallery__filter {
     margin-bottom: 20px;
   }
@@ -1256,6 +1262,7 @@ body {
   .gallery__button {
     margin-bottom: 30px;
   }
+
 
   .contacts {
     padding-top: 30px;
