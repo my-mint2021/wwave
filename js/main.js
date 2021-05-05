@@ -21,6 +21,11 @@ $(document).ready(function() {
 	});
 });
 
+$( '.menu' ).on("click", function(){
+  $('.header__burger').removeClass('header__burger--active');
+  $('.menu').removeClass('menu--active');
+  $('body').removeClass('body--lock');
+});
 
   var mixer = mixitup('.gallery__content');
 });
