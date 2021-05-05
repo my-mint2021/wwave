@@ -79,7 +79,6 @@ body {
 .button:hover {
   color: #00B2A0;
   border-color: #00B2A0;
-
 }
 
 .button:focus {
@@ -242,7 +241,6 @@ body {
 .school__items {
   display: flex;
   justify-content: space-between;
-  /* для пп */
   margin-bottom: 70px;
 }
 
@@ -301,7 +299,6 @@ body {
 
 .school__info {
   width: 295px;
-
 }
 
 .school__wave {
@@ -350,25 +347,31 @@ body {
 /* === / school === */
 
 /* === motivation === */
+.motivation {
+  position: relative;
+  padding: 170px 0 145px;
+
+}
 
 .motivation__bg {
-  padding: 170px 0 145px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
   background-position: right top;
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: cover;
 }
 
 .motivation__title {
   margin-bottom: 100px;
-  /* для пп */
   padding-top: 20px;
   text-align: left;
 }
 
-/* для пп, не понятно почему слэш улетает вверх, в других местах нормально */
 .motivation__title::after {
   top: 20px;
-  /* все равно улетает слеш,может рядомстоитс картинкой потому что */
 }
 
 .motivation__text {
@@ -441,9 +444,9 @@ body {
   outline: 5px solid transparent;
 }
 
-/* не понял как сделать фокус на галерее */
+/* у меня в хроме не отображается оутлайн только водном месте на фото в галерее,у тебя все показывалось */
 .gallery__link:focus {
-  outline: 5px solid #00b2a0;
+  outline: 1px solid #00b2a0;
 }
 
 .gallery__hover {
@@ -463,10 +466,8 @@ body {
 }
 
 .gallery__button {
-  position: relative;
-  margin-bottom: 200px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  display: block;
+  margin: 0 auto 200px;
 }
 
 .blockquote {
@@ -481,7 +482,7 @@ body {
 }
 
 .blockquote__author {
-  /* убрал абсолют ограничил по ширине. вроде так */
+  display: block;
   max-width: 885px;
   margin: 0 auto;
   text-align: right;
@@ -496,7 +497,6 @@ body {
   height: 600px;
   background-repeat: no-repeat;
   background-position: center center;
-
 }
 
 .video__link svg path {
@@ -556,7 +556,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* ограничил по ширине как в макете, не понял как по другому сместить контент */
   max-width: 600px;
   margin-left: auto;
   height: 800px;
@@ -572,7 +571,6 @@ body {
 }
 
 .blog__slider-text {
-  /* убрал абсолют вроде работает */
   font-weight: 300;
   font-size: 14px;
 }
@@ -590,15 +588,10 @@ body {
 
 .slick-dots {
   position: absolute;
-  width: 100%;
-  /* для пп. уверен что так не стоит делать ))) не знаю другого способа 
-  поставил марджин лефт и повился гориз скролл писал тебе в телеге*/
-  padding-left: 120px;
-  justify-content: center;
-  /* для пп */
-  bottom: 77px;
   display: flex;
-  transform: translateX(-3%);
+  justify-content: center;
+  width: 100%;
+  bottom: 77px;
 }
 
 .slick-dots li:not(:last-child) {
@@ -638,7 +631,6 @@ body {
 }
 
 .team__title {
-  /* пп */
   padding-top: 4px;
   margin-bottom: 209px;
 }
@@ -663,24 +655,6 @@ body {
   position: relative;
   margin-bottom: 25px;
   overflow: hidden;
-}
-
-.team__photo:hover::after {
-  content: attr(data-title);
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 2px 10px;
-  font-family: 'Raleway', 'Arial', sans-serif;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  font-style: italic;
-  color: #fff;
-  line-height: 1;
-  border-radius: 20px;
-  background-color: hsla(174, 100%, 35%, 0.205);
 }
 
 .team__photo img {
@@ -716,7 +690,6 @@ body {
 
 .tariffs__items {
   display: flex;
-  /* как уменьшить пробел между ценойи списком если в одной карточке список больше? */
   justify-content: space-around;
 }
 
@@ -725,9 +698,10 @@ body {
 }
 
 .tariffs__item {
-  display: flex;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  height: 100%;
   flex-direction: column;
-  justify-content: space-between;
   padding: 45px 30px;
   max-width: 360px;
   background-color: #fff;
@@ -735,9 +709,8 @@ body {
 }
 
 .tariffs__item-list {
-  padding-bottom: 60px;
-  /* написал чтобы список прижимался к h3 сверху */
   flex: auto;
+  padding-bottom: 60px;
 }
 
 .tariffs__item-text {
@@ -778,7 +751,7 @@ body {
   padding: 195px 0 200px;
 }
 
-.contacts__map-img {
+.contacts__img {
   max-width: 1473px;
   margin: 0 auto;
   height: 640px;
@@ -845,9 +818,7 @@ body {
 
 .form__button {
   align-self: flex-start;
-  padding: 0;
-  padding: 23px 95px;
-  /* оставил паддинги, без них не работает оО */
+  padding: 21px 114px;
 }
 
 .contacts__addr {
@@ -912,13 +883,6 @@ body {
 /* === / footer === */
 
 /* === media === */
-/* по чек-листу не более 4 запросов, но тут фон совсем плохо смотрится
- без уменьшения паддингов */
-@media(max-width: 1600px) {
-  .motivation__bg {
-    padding: 50px 0;
-  }
-}
 
 @media(max-width: 1200px) {
 
@@ -930,21 +894,28 @@ body {
     margin-bottom: 50px;
   }
 
-  .about {
+  .about,
+  .school,
+  .motivation {
     padding: 50px 0;
+    line-height: 1.5;
   }
 
   .about__text {
     justify-content: space-around;
   }
 
+  .about__text,
+  .school__descr,
+  .school__text,
+  .motivation__text {
+    font-size: 16px;
+    text-align: justify;
+  }
+
   .about__text p {
     max-width: 95%;
     margin-right: 20px;
-  }
-
-  .school {
-    padding: 50px 0;
   }
 
   .school__inner {
@@ -960,7 +931,6 @@ body {
   }
 
   .motivation__bg {
-    /* перебивались стили из инлайна в html, пришлось)) */
     background-image: none !important;
   }
 
@@ -969,9 +939,9 @@ body {
   }
 
   .motivation__text {
-    max-width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
   }
-
 }
 
 @media(max-width: 992px) {
@@ -993,60 +963,52 @@ body {
     font-size: 150px;
   }
 
-  .about {
-    padding: 50px 0;
-  }
-
-  .about__text {
-    display: block
-  }
-
-  .about__text p {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    max-width: 95%;
-  }
-
+  .about,
   .school {
     padding: 50px 0;
   }
 
-  .school__items {
-    display: block;
+  .about__text,
+  .school__items,
+  .school__inner {
+    display: block
+  }
 
+  .about__text p,
+  .school__text,
+  .school__descr,
+  .motivation__text {
+    text-align: justify;
+  }
+
+  .about__text p,
+  .school__inner,
+  .school__text,
+  .motivation__text {
+    max-width: 90%;
+  }
+
+  .about__text p,
+  .school__item,
+  .school__inner,
+  .motivation__text {
+    margin: 0 auto;
+  }
+
+  .about__text p {
+    margin-bottom: 20px;
   }
 
   .school__item {
     max-width: 95%;
-    margin: 0 auto;
-  }
-
-  .school__service {
-    margin: 15px 0;
   }
 
   .school__descr {
-    max-width: 90%;
-    margin-bottom: 50px;
-  }
-
-  .school__inner {
-    display: block;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
-  .school__text {
-    max-width: 90%;
-  }
-
-  .motivation__text {
-    max-width: 95%;
-    margin: 0 auto;
+    max-width: 70%;
+    margin: 0 auto 50px;
   }
 }
-
-
+/* закончил на 768 */
 @media(max-width: 768px) {
   .header__top {
     justify-content: start;
@@ -1073,12 +1035,6 @@ body {
     right: -10px;
     top: 0;
     height: 100vh;
-    /* bottom: 0;
-  хотел растянуть меню на весь экран устройства,чтобыможнобыло кликать 
-  только на пункты из меню, ичтобыкорректноотображалосьна всех
-   устройствах при bottom:0 ничего не растягивает как когда делал 
-   ховер на галерее. плюс не закрывается меню по клику на любом
-    пункте мени-как реализовать??? */
     display: block;
     padding: 150px 0 50px;
     text-align: center;
@@ -1093,7 +1049,7 @@ body {
 
   .menu__link {
     display: block;
-    padding: 30px 0;
+    padding: 35px 0;
   }
 
   .menu--active {
@@ -1101,29 +1057,25 @@ body {
   }
 
   .title {
-    font-size: 22px;
+    font-size: 33px;
     margin-bottom: 50px;
   }
 
-  .about {
-    padding: 50px 0 0;
-  }
-
-  .school {
+  .about,
+  .school,
+  .motivation__bg {
     padding: 50px 0 0;
   }
 
   .school__service {
-    font-size: 18px;
+    font-size: 24px;
+    margin: 0 auto 15px;
   }
 
   .school__num {
     font-size: 18px;
   }
 
-  .motivation__bg {
-    padding: 50px 0 0;
-  }
 }
 
 @media(max-width: 576px) {
@@ -1175,264 +1127,3 @@ body {
     padding: 0;
   }
 }
-
-
-
-/* медиа по респонсив, сначала так сделал получилось 6 брейкпойнтов
-потом сделал по чек листу. Вадим говорил в видосе что адаптив делается
-просто перетягиванием размера в девтулз, а по чек листу заранее
-заданные, как лучше делать?и поему надо не более 4 брейкпойнтов
-в слуае с фоновой картинкой в motivation допустимо было добавить еще один?*/
-
-/* 
-@media(max-width: 1600px) {
-  .motivation__bg {
-    padding: 50px 0;
-  }
-}
-
-
-@media (max-width: 1220px) {
-
-  .about {
-    padding: 100px 0;
-  }
-
-  .about__text {
-    justify-content: space-around;
-  }
-
-  .about__text p {
-    margin-right: 20px;
-  }
-
-  .school {
-    padding: 100px 0;
-  }
-
-  .motivation__bg { */
-/* перебивались стили из инлайна в html, пришлось)) */
-/* background-image: none !important;
-  }
-
-  .motivation__title {
-    text-align: center;
-  }
-
-  .motivation__text {
-    max-width: 100%;
-  }
-}
-
-
-
-
-@media (max-width: 1024px) {
-
-  .header__top {
-    justify-content: space-around;
-  }
-
-  .header__logo {
-    margin-right: 50px;
-  }
-
-  .menu__item:not(:last-child) {
-    margin-right: 20px;
-  }
-
-  .title {
-    font-size: 36px;
-    margin-bottom: 50px;
-  }
-
-  .header__title {
-    font-size: 150px;
-  }
-
-  .about {
-    padding: 50px 0;
-  }
-
-  .about__text {
-    display: block
-  }
-
-  .about__text p {
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
-
-  .school {
-    padding: 50px 0;
-  }
-
-  .school__items {
-    display: block;
-
-  }
-
-  .school__item {
-    max-width: 95%;
-    margin: 0 auto;
-  }
-
-  .school__service {
-    margin: 15px 0;
-  }
-
-  .school__descr {
-    max-width: 90%;
-    margin-bottom: 50px;
-  }
-
-  .school__inner {
-    display: block;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
-  .school__text {
-    max-width: 90%;
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .header__top {
-    justify-content: start;
-  }
-
-  .logo {
-    position: relative;
-    z-index: 3;
-  }
-
-  .menu__burger {
-    position: absolute;
-    z-index: 3;
-    right: 10px;
-    display: block;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-  }
-
-  .menu {
-    position: absolute;
-    left: -10px;
-    right: -10px;
-    top: 0; */
-/* bottom: 0;
-  хотел растянуть меню на весь экран устройства,чтобыможнобыло кликать 
-  только на пункты из меню, ичтобыкорректноотображалосьна всех
-   устройствах при bottom:0 ничего не растягивает как когда делал 
-   ховер на галерее. плюс не закрывается меню по клику на любом
-    пункте мени-как реализовать??? */
-/* display: block;
-    padding: 150px 0 50px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.856);
-    transform: translateY(-200%);
-    transition: transform 0.5s ease-in;
-  }
-
-  .menu__item:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .menu__link {
-    display: block;
-    padding: 30px 0;
-  }
-
-  .menu--active {
-    transform: translateY(0%);
-  }
-
-  .title {
-    font-size: 22px;
-    margin-bottom: 50px;
-  }
-
-  .about {
-    padding: 50px 0 0;
-    ;
-  }
-
-  .school {
-    padding: 50px 0 0;
-  }
-
-  .school__service {
-    font-size: 18px;
-  }
-
-  .school__num {
-    font-size: 18px;
-  }
-
-  .motivation__bg {
-    padding: 50px 0 0;
-  }
-}
-
-
-
-
-@media(max-width: 500px) {
-
-  .title {
-    font-size: 15px;
-    margin-bottom: 30px;
-  }
-
-  .about__title {
-    font-size: 14px;
-  }
-
-  .header__title {
-    font-size: 80px;
-  }
-
-  .header__subtitle {
-    font-size: 14px;
-  }
-
-  .about {
-    padding: 25px 0;
-  }
-
-  .school__inner {
-    max-width: 96%;
-  }
-
-  .motivation__bg {
-    padding: 0;
-  }
-}
-
-
-
-
-@media(max-width: 375px) {
-
-  .menu {
-    padding: 100px 0 50px;
-  }
-
-  .menu__link {
-    font-size: 18px;
-    padding: 15px 0;
-  }
-
-  .school__info {
-    width: 240px;
-  }
-
-  .school__descr {
-    max-width: 100%;
-    margin-bottom: 30px;
-  }
-} */
