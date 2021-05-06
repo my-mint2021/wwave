@@ -1,17 +1,9 @@
 $(function () {
  
-
   $('.blog__slider').slick({
     dots: true,
     arrows: false,
-    // autoplay:true,
-    // autoplaySpeed:4000,
   });
-
-// $('.menu__burger').on('click', function(){
-// $('.menu').toggleClass('menu--active');
-// $('body').toggleClass('lock');
-// });
 
 $(document).ready(function() {
 	$('.header__burger').click(function(event) {
