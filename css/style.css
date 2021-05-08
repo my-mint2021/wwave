@@ -98,8 +98,31 @@ body {
   display: flex;
   align-items: center;
   padding-top: 35px;
+  transition: all 0.9s ease-in;
 }
 
+/* ! */
+.header__top--fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 0;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: #00b2a0e5;
+  transition: all 0.9s ease-in;
+}
+
+.header__top--fixed .header__logo {
+  align-self: flex-end;
+}
+
+.header__top--fixed .menu {
+  padding-top: 10px;
+}
+
+/* ! */
 .logo {
   outline-color: transparent;
   transition: transform 0.2s ease-in, outline 0.2s ease-in;
@@ -439,12 +462,12 @@ body {
 }
 
 .gallery__link {
-  outline: 5px solid transparent;
+  outline: 1px solid transparent;
 }
 
 /* у меня в хроме не отображается оутлайн только в этом одном месте на фотках в галерее,у тебя все показывалось */
 .gallery__link:focus {
-  outline: 1px solid #00b2a0;
+  border: 1px solid #00b2a0;
 }
 
 .gallery__hover {
@@ -542,12 +565,12 @@ body {
   margin-bottom: 229px;
 }
 
-.blog__slider-item {
+.blog-slider__item {
   position: relative;
-  height: 800px;
+
 }
 
-.blog__slider-content {
+.blog-slider__content {
   position: relative;
   z-index: 2;
   display: flex;
@@ -560,19 +583,19 @@ body {
   color: #fff;
 }
 
-.blog__slider-top {
+.blog-slider__top {
   font-weight: 400;
   font-size: 48px;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
-.blog__slider-text {
+.blog-slider__text {
   font-weight: 300;
   font-size: 14px;
 }
 
-.blog__slider-blackout {
+.blog-slider__blackout {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -637,9 +660,7 @@ body {
 }
 
 .team__member {
-  width: 330px;
-  height: 450px;
-  background-repeat: no-repeat;
+  max-width: 330px;
   text-align: center;
 }
 
@@ -697,43 +718,39 @@ body {
   /* display: flex; */
   /* justify-content: space-between; */
   height: 100%;
-  flex-direction: column;
+  /* flex-direction: column; */
   padding: 45px 30px;
   max-width: 360px;
   background-color: #fff;
 }
 
-.tariffs__item-list {
+.tariffs__list {
   flex: auto;
   padding-bottom: 60px;
 }
 
-.tariffs__item-text {
+.tariffs__text {
   font-size: 14px;
 }
 
-.tariffs__item-text:not(:last-child) {
+.tariffs__text:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.tariffs__item-rate {
+.tariffs__rate,
+.tariffs__num {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: #01353E;
+}
+
+.tariffs__rate {
   margin-bottom: 60px;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 1.1;
-  text-align: center;
-  color: #01353E;
 }
 
-.tariffs__item-num {
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 1.1;
-  text-align: center;
-  color: #01353E;
-}
-
-.tariffs__item-num span {
+.tariffs__num span {
   vertical-align: middle;
   font-size: 18px;
   line-height: 1;
@@ -742,11 +759,11 @@ body {
 /* === / tariffs === */
 
 /* === map === */
-.contacts__map {
+.map {
   padding: 195px 0 200px;
 }
 
-.contacts__img {
+.map__img {
   max-width: 1473px;
   margin: 0 auto;
   height: 640px;
@@ -767,10 +784,10 @@ body {
 }
 
 .form {
-  display: flex;
+  /* display: flex; */
   margin-right: 30px;
-  width: 570px;
-  flex-direction: column;
+  max-width: 570px;
+  /* flex-direction: column; */
   padding-top: 7px;
 }
 
@@ -785,6 +802,7 @@ body {
 }
 
 .form__input::placeholder {
+  font-weight: 700;
   font-size: 18px;
   line-height: 1;
   color: #00B2A0;
@@ -894,7 +912,7 @@ body {
   .motivation,
   .gallery,
   .tariffs,
-  .contacts__map {
+  .map {
     padding: 50px 0;
     line-height: 1.5;
   }
@@ -906,6 +924,10 @@ body {
   .motivation__text {
     font-size: 16px;
     text-align: justify;
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 30px;
   }
 
   .about__text {
@@ -946,14 +968,12 @@ body {
     padding: 0;
   }
 
-  .gallery__button {
+  .gallery__button{
     margin-bottom: 0;
   }
-
-  .blockquote {
-    margin-bottom: 0;
+  .blockquote{
+    margin: 30px 0;
   }
-
   .video__wrap {
     margin-bottom: 50px;
   }
@@ -962,24 +982,24 @@ body {
     padding-bottom: 50px;
   }
 
-  .blog__slider-content {
+  .blog-slider__content {
     max-width: 500px;
   }
-
-  .blog__slider-top {
+  .blog-slider__item,
+  .blog-slider__content {
+    height: 600px;
+  }
+  .blog-slider__top {
     font-size: 40px;
   }
 
-  .team {
+  .team,
+  .contacts__inner {
     padding-bottom: 100px;
   }
 
   .contacts__img {
     height: 550px;
-  }
-
-  .contacts__inner {
-    padding-bottom: 100px;
   }
 
   .social {
@@ -989,7 +1009,6 @@ body {
   .footer {
     padding: 25px 0;
   }
-
 }
 
 @media(max-width: 992px) {
@@ -1062,7 +1081,8 @@ body {
     margin: 0 auto;
   }
 
-  .about__text p {
+  .about__text p,
+  .gallery__filter {
     margin-bottom: 20px;
   }
 
@@ -1081,10 +1101,6 @@ body {
     justify-content: center;
   }
 
-  .gallery__filter {
-    margin-bottom: 20px;
-  }
-
   .gallery__item {
     margin: 0 10px 20px;
   }
@@ -1097,25 +1113,25 @@ body {
     font-size: 45px;
   }
 
-  .blog__slider-content {
+  .blog-slider__content {
     max-width: 400px;
   }
 
-  .blog__slider-item,
-  .blog__slider-content {
+  .blog-slider__item,
+  .blog-slider__content {
     height: 600px;
   }
 
-  .blog__slider-item {
+  .blog-slider__item {
     background-position: center;
   }
 
-  .blog__slider-top {
+  .blog-slider__top {
     font-size: 33px;
     margin-bottom: 20px;
   }
 
-  .blog__slider-text {
+  .blog-slider__text {
     font-weight: 300;
     font-size: 14px;
     max-width: 300px;
@@ -1147,19 +1163,23 @@ body {
 
   .tariffs__items {
     justify-content: space-between;
-    column-gap: 20px;
+    /* column-gap: 20px; */
+  }
+
+  .tariffs__item:not(:last-child) {
+    margin-right: 20px;
   }
 
   .tariffs__item {
     padding: 10px;
   }
 
-  .tariffs__item-rate {
+  .tariffs__rate {
     margin-bottom: 45px;
     font-size: 30px;
   }
 
-  .tariffs__item-list {
+  .tariffs__list {
     padding-bottom: 30px;
   }
 
@@ -1206,6 +1226,8 @@ body {
     height: 20px;
     right: 10px;
     z-index: 3;
+    background-color: transparent;
+    border: none;
   }
 
   .header__burger span {
@@ -1262,7 +1284,8 @@ body {
     padding: 150px 0 50px;
     text-align: center;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.856);
+    /* background-color: rgba(0, 0, 0, 0.856); */
+    background-color: #00b2a0e5;
     transform: translateY(-200%);
     transition: transform 0.5s ease-in;
   }
@@ -1274,6 +1297,7 @@ body {
   .menu__link {
     display: block;
     padding: 35px 0;
+    font-size: 28px;
   }
 
   .menu--active {
@@ -1282,14 +1306,14 @@ body {
 
   .title {
     font-size: 33px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   .about,
   .school,
   .motivation,
   .gallery {
-    padding: 50px 0 0;
+    padding: 30px 0 0;
   }
 
   .school__service {
@@ -1304,6 +1328,10 @@ body {
 
   .gallery__button {
     margin-bottom: 30px;
+  }
+
+  .team__member:not(:last-child) {
+    margin-bottom: 50px;
   }
 
   .contacts {
@@ -1330,6 +1358,7 @@ body {
 
   .blockquote {
     padding: 30px 0;
+    margin-bottom: 30px;
   }
 
   .blockquote__text {
@@ -1349,16 +1378,16 @@ body {
     width: 50%;
   }
 
-  .blog__slider-item,
-  .blog__slider-content {
-    height: 400px;
+  .blog-slider__item,
+  .blog-slider__content {
+    height: 350px;
   }
 
-  .blog__slider-content {
+  .blog-slider__content {
     padding-bottom: 0;
   }
 
-  .blog__slider-top {
+  .blog-slider__top {
     font-size: 25px;
     margin-bottom: 15px;
   }
@@ -1373,18 +1402,24 @@ body {
 
   .tariffs__items {
     display: block;
+    width: 90%;
+    margin: 0 auto;
   }
 
-  .tariffs__item {
-    width: 90%;
+  .tariffs__item,
+  .tariffs__item:not(:last-child) {
     margin: 0 auto 50px;
   }
 
-  .tariffs__item-num {
+  .tariffs__item {
+    padding: 30px 20px;
+  }
+
+  .tariffs__num {
     font-size: 25px;
   }
 
-  .contacts__map {
+  .map {
     display: none;
   }
 
@@ -1393,7 +1428,7 @@ body {
   }
 
   .form {
-    width: 80%;
+    max-width: 80%;
     margin: 0 auto;
   }
 
@@ -1434,12 +1469,13 @@ body {
   }
 
   .menu__link {
-    font-size: 16px;
-    padding: 10px 0;
+    font-size: 22px;
+    padding: 25px 0;
   }
 
   .header__top {
-    padding: 20px 20px 0;
+    padding: 10px 10px 0;
+    height: 60px;
   }
 
   .logo svg {
@@ -1490,6 +1526,7 @@ body {
 
   .school__inner {
     max-width: 96%;
+    padding-bottom: 20px;
   }
 
   .school__service {
@@ -1559,17 +1596,17 @@ body {
     font-size: 26px;
   }
 
-  .blog__slider-top {
+  .blog-slider__top {
     font-size: 16px;
     margin-bottom: 15px;
   }
 
-  .blog__slider-content {
+  .blog-slider__content {
     max-width: 200px;
   }
 
-  .blog__slider-item,
-  .blog__slider-content,
+  .blog-slider__item,
+  .blog-slider__content,
   .video__wrap {
     height: 250px;
   }
@@ -1600,8 +1637,8 @@ body {
     margin-bottom: 100px;
   }
 
-  .tariffs__item-rate,
-  .tariffs__item-num {
+  .tariffs__rate,
+  .tariffs__num {
     font-size: 23px;
   }
 
@@ -1610,7 +1647,7 @@ body {
     margin-bottom: 30px;
   }
 
-  .tariffs__item-text:not(:last-child) {
+  .tariffs__text:not(:last-child) {
     margin-bottom: 10px;
   }
 
