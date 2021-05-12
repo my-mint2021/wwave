@@ -1145,9 +1145,11 @@ body {
   .gallery__item {
     margin: 0 10px 20px;
   }
-  .blockquote{
+
+  .blockquote {
     padding: 20px 0;
   }
+
   .blockquote__author {
     max-width: 700px;
   }
@@ -1575,10 +1577,6 @@ body {
   .logo {
     margin-left: 0;
   }
-
-  /* .menu__burger {
-    right: 20px;
-  } */
 
   .title {
     font-size: 25px;
