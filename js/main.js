@@ -40,9 +40,11 @@ var header = $('.header__top'),
 $(window).scroll(function() {
 	var scrolled = $(window).scrollTop();
  
-	if ( scrolled > 600 && scrolled > scrollPrev ) {
+	if ( scrolled > 900 && scrolled > scrollPrev ) {
 		header.addClass('header__top--fixed');
-	} else {
+	} 
+	
+	else {
 		header.removeClass('header__top--fixed');
 	}
 	scrollPrev = scrolled;
